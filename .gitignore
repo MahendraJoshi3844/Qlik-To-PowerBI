@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+build/
+dist/
+out/
+output/
+# Customer material never enters the repository. Real apps and exports go under
+# customer/ (ignored); samples/ holds synthetic material only.
+customer/
+*.qvf
+*.qvw
+*.qvd
+.env
