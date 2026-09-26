@@ -1,0 +1,35 @@
+{
+  "qInfo": {
+    "qId": "sc1",
+    "qType": "scatterplot"
+  },
+  "visualization": "scatterplot",
+  "title": "Customers scatter",
+  "qHyperCubeDef": {
+    "qDimensions": [
+      {
+        "qDef": {
+          "qFieldDefs": [
+            "CustomerName"
+          ]
+        }
+      }
+    ],
+    "qMeasures": [
+      {
+        "qDef": {
+          "qDef": "",
+          "qLabel": ""
+        },
+        "qLibraryId": "mSales"
+      },
+      {
+        "qDef": {
+          "qDef": "",
+          "qLabel": ""
+        },
+        "qLibraryId": "mQty"
+      }
+    ]
+  }
+}

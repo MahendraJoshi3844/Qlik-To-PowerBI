@@ -1,0 +1,124 @@
+///$tab Main
+SET ThousandSep=',';
+SET DecimalSep='.';
+SET DateFormat='YYYY-MM-DD';
+SET vDataPath = 'lib://DataFiles/';
+LET vCurrentYear = 2024;
+LET vLoadTime = Now();
+
+///$tab Dimensions
+Customers:
+LOAD CustomerID,
+     CustomerName,
+     Upper(Country) as Country,
+     Segment
+FROM [$(vDataPath)Customers.csv]
+(txt, utf8, embedded labels, delimiter is ',', msq);
+
+Products:
+LOAD ProductID,
+     ProductName,
+     CategoryID,
+     UnitCost
+FROM [lib://DataFiles/Products.xlsx]
+(ooxml, embedded labels, table is Products);
+
+LEFT JOIN (Products)
+LOAD * INLINE [
+CategoryID, Category
+1, Bikes
+2, Accessories
+3, Clothing
+];
+
+Region_Map:
+MAPPING LOAD * INLINE [
+Country, Region
+USA, North America
+CANADA, North America
+GERMANY, Europe
+FRANCE, Europe
+];
+
+///$tab Facts
+LIB CONNECT TO 'SQL_DW';
+
+Orders:
+LOAD OrderID,
+     CustomerID,
+     ProductID,
+     OrderDate,
+     Year(OrderDate) as OrderYear,
+     Month(OrderDate) as OrderMonth,
+     Quantity,
+     UnitPrice,
+     Quantity * UnitPrice as SalesAmount,
+     ApplyMap('Region_Map', Upper(ShipCountry), 'Other') as Region,
+     Status
+WHERE Status <> 'Cancelled';
+SQL SELECT OrderID, CustomerID, ProductID, OrderDate, Quantity, UnitPrice, ShipCountry, Status
+FROM dbo.Orders;
+
+Returns:
+LOAD OrderID,
+     ReturnDate,
+     ReturnReason
+FROM [lib://DataFiles/Returns.csv]
+(txt, utf8, embedded labels, delimiter is ',');
+
+OrderLines_Tmp:
+LOAD OrderID, LineNo, Discount
+FROM [lib://DataFiles/OrderLines.csv]
+(txt, utf8, embedded labels, delimiter is ';');
+
+OrderDiscounts:
+NoConcatenate
+LOAD OrderID,
+     Sum(Discount) as TotalDiscount
+RESIDENT OrderLines_Tmp
+GROUP BY OrderID;
+
+DROP TABLE OrderLines_Tmp;
+
+Targets:
+CrossTable(TargetMonth, Target, 1)
+LOAD Region, Jan, Feb, Mar
+FROM [lib://DataFiles/Targets.xlsx]
+(ooxml, embedded labels, table is Targets);
+
+// Budget comes from the QVD layer: Power Query cannot read it.
+Budget:
+LOAD Region,
+     OrderYear,
+     BudgetAmount
+FROM [lib://QVD/Budget.qvd] (qvd);
+
+///$tab Calendar
+TempCal:
+LOAD Min(OrderDate) as MinDate,
+     Max(OrderDate) as MaxDate
+RESIDENT Orders;
+
+MasterCalendar:
+LOAD Date(MinDate + IterNo() - 1) as CalendarDate
+AUTOGENERATE 1 WHILE MinDate + IterNo() - 1 <= MaxDate;
+
+DROP TABLE TempCal;
+
+///$tab Logs
+FOR EACH vFile in FileList('lib://DataFiles/Logs/*.csv')
+  Logs:
+  LOAD * FROM [$(vFile)] (txt, utf8, embedded labels);
+NEXT vFile
+
+STORE Orders INTO [lib://QVD/Orders.qvd] (qvd);
+
+///$tab Security
+Section Access;
+LOAD * INLINE [
+ACCESS, USERID, REGION
+ADMIN, DOMAIN\ADMIN,
+USER, DOMAIN\ALICE, NORTH AMERICA
+USER, DOMAIN\BOB, EUROPE
+];
+Section Application;

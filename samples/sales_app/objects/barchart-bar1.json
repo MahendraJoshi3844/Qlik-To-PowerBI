@@ -1,0 +1,32 @@
+{
+  "qInfo": {
+    "qId": "bar1",
+    "qType": "barchart"
+  },
+  "visualization": "barchart",
+  "title": "Sales by Region",
+  "qHyperCubeDef": {
+    "qDimensions": [
+      {
+        "qDef": {
+          "qFieldDefs": [
+            "Region"
+          ]
+        }
+      }
+    ],
+    "qMeasures": [
+      {
+        "qDef": {
+          "qDef": "",
+          "qLabel": ""
+        },
+        "qLibraryId": "mSales"
+      }
+    ]
+  },
+  "orientation": "vertical",
+  "barGrouping": {
+    "grouping": "grouped"
+  }
+}

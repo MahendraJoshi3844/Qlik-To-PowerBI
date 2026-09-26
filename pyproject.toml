@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qlik2pbi"
+version = "0.1.0"
+description = "Qlik Sense / QlikView to Power BI migration accelerator: load script to Power Query, associative model to star schema, set analysis to DAX, sheets to PBIR."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Proprietary" }
+authors = [{ name = "Mahendra Joshi" }]
+# Standard library only, so it runs on locked-down customer machines.
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+qlik2pbi = "qlik2pbi.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["qlik2pbi*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

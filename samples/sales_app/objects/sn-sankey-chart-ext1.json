@@ -1,0 +1,35 @@
+{
+  "qInfo": {
+    "qId": "ext1",
+    "qType": "sn-sankey-chart"
+  },
+  "visualization": "sn-sankey-chart",
+  "title": "Flows",
+  "qHyperCubeDef": {
+    "qDimensions": [
+      {
+        "qDef": {
+          "qFieldDefs": [
+            "Region"
+          ]
+        }
+      },
+      {
+        "qDef": {
+          "qFieldDefs": [
+            "Category"
+          ]
+        }
+      }
+    ],
+    "qMeasures": [
+      {
+        "qDef": {
+          "qDef": "",
+          "qLabel": ""
+        },
+        "qLibraryId": "mSales"
+      }
+    ]
+  }
+}
