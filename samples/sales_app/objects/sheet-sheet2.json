@@ -1,0 +1,76 @@
+{
+  "qInfo": {
+    "qId": "sheet2",
+    "qType": "sheet"
+  },
+  "qMetaDef": {
+    "title": "Details"
+  },
+  "rank": 1,
+  "cells": [
+    {
+      "name": "pvt1",
+      "type": "",
+      "col": 0,
+      "row": 0,
+      "colspan": 12,
+      "rowspan": 6
+    },
+    {
+      "name": "sc1",
+      "type": "",
+      "col": 12,
+      "row": 0,
+      "colspan": 12,
+      "rowspan": 6
+    },
+    {
+      "name": "combo1",
+      "type": "",
+      "col": 0,
+      "row": 6,
+      "colspan": 8,
+      "rowspan": 6
+    },
+    {
+      "name": "tree1",
+      "type": "",
+      "col": 8,
+      "row": 6,
+      "colspan": 6,
+      "rowspan": 6
+    },
+    {
+      "name": "g1",
+      "type": "",
+      "col": 14,
+      "row": 6,
+      "colspan": 4,
+      "rowspan": 3
+    },
+    {
+      "name": "txt1",
+      "type": "",
+      "col": 14,
+      "row": 9,
+      "colspan": 4,
+      "rowspan": 3
+    },
+    {
+      "name": "ext1",
+      "type": "",
+      "col": 18,
+      "row": 6,
+      "colspan": 6,
+      "rowspan": 3
+    },
+    {
+      "name": "map1",
+      "type": "",
+      "col": 18,
+      "row": 9,
+      "colspan": 6,
+      "rowspan": 3
+    }
+  ]
+}

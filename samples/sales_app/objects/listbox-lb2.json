@@ -1,0 +1,13 @@
+{
+  "qInfo": {
+    "qId": "lb2",
+    "qType": "listbox"
+  },
+  "qListObjectDef": {
+    "qDef": {
+      "qFieldDefs": [
+        "OrderYear"
+      ]
+    }
+  }
+}

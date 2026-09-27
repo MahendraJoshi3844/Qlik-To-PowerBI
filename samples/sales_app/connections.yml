@@ -1,0 +1,10 @@
+connections:
+  DataFiles:
+    connectionstring: C:\Data\Sales\
+    type: folder
+  QVD:
+    connectionstring: \\fileserver\qvd\
+    type: folder
+  SQL_DW:
+    connectionstring: 'CUSTOM CONNECT TO "provider=QvOdbcConnectorPackage.exe;driver=sqlserver;host=sqlprod01.contoso.local;database=SalesDW;"'
+    type: QvOdbcConnectorPackage.exe

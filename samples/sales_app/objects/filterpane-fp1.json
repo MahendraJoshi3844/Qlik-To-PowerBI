@@ -1,0 +1,28 @@
+{
+  "qInfo": {
+    "qId": "fp1",
+    "qType": "filterpane"
+  },
+  "qChildList": {
+    "qItems": [
+      {
+        "qInfo": {
+          "qId": "lb1",
+          "qType": "listbox"
+        }
+      },
+      {
+        "qInfo": {
+          "qId": "lb2",
+          "qType": "listbox"
+        }
+      },
+      {
+        "qInfo": {
+          "qId": "lb3",
+          "qType": "listbox"
+        }
+      }
+    ]
+  }
+}

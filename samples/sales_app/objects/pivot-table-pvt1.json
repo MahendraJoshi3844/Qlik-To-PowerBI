@@ -1,0 +1,42 @@
+{
+  "qInfo": {
+    "qId": "pvt1",
+    "qType": "pivot-table"
+  },
+  "visualization": "pivot-table",
+  "title": "Sales pivot",
+  "qHyperCubeDef": {
+    "qDimensions": [
+      {
+        "qDef": {
+          "qFieldDefs": [
+            "Region"
+          ]
+        }
+      },
+      {
+        "qDef": {
+          "qFieldDefs": [
+            "Category"
+          ]
+        }
+      },
+      {
+        "qDef": {
+          "qFieldDefs": [
+            "OrderYear"
+          ]
+        }
+      }
+    ],
+    "qMeasures": [
+      {
+        "qDef": {
+          "qDef": "",
+          "qLabel": ""
+        },
+        "qLibraryId": "mSales"
+      }
+    ]
+  }
+}

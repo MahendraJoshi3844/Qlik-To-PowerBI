@@ -1,0 +1,49 @@
+[
+  {
+    "qInfo": {
+      "qId": "dCust",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "N",
+      "qFieldDefs": [
+        "CustomerName"
+      ]
+    },
+    "qMetaDef": {
+      "title": "Customer"
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "dProdH",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "H",
+      "qFieldDefs": [
+        "Category",
+        "ProductName"
+      ]
+    },
+    "qMetaDef": {
+      "title": "Product drill-down"
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "dGeoC",
+      "qType": "dimension"
+    },
+    "qDim": {
+      "qGrouping": "C",
+      "qFieldDefs": [
+        "Region",
+        "Country"
+      ]
+    },
+    "qMetaDef": {
+      "title": "Geography switch"
+    }
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "qInfo": {
+    "qId": "combo1",
+    "qType": "combochart"
+  },
+  "visualization": "combochart",
+  "title": "Sales and share",
+  "qHyperCubeDef": {
+    "qDimensions": [
+      {
+        "qDef": {
+          "qFieldDefs": [
+            "OrderMonth"
+          ]
+        }
+      }
+    ],
+    "qMeasures": [
+      {
+        "qDef": {
+          "qDef": "",
+          "qLabel": ""
+        },
+        "qLibraryId": "mSales"
+      },
+      {
+        "qDef": {
+          "qDef": "",
+          "qLabel": ""
+        },
+        "qLibraryId": "mShare"
+      }
+    ]
+  }
+}

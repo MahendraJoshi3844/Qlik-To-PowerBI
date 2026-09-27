@@ -1,0 +1,13 @@
+{
+  "qInfo": {
+    "qId": "lb3",
+    "qType": "listbox"
+  },
+  "qListObjectDef": {
+    "qDef": {
+      "qFieldDefs": [
+        "Segment"
+      ]
+    }
+  }
+}

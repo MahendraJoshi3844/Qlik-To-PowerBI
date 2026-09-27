@@ -1,0 +1,256 @@
+[
+  {
+    "qInfo": {
+      "qId": "mSales",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Total Sales",
+      "qDef": "Sum(SalesAmount)",
+      "qNumFormat": {
+        "qType": "F",
+        "qFmt": "#,##0"
+      }
+    },
+    "qMetaDef": {
+      "title": "Total Sales"
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "mQty",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Total Quantity",
+      "qDef": "Sum(Quantity)",
+      "qNumFormat": {
+        "qType": "F",
+        "qFmt": "#,##0"
+      }
+    },
+    "qMetaDef": {
+      "title": "Total Quantity"
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "mOrders",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Order Count",
+      "qDef": "Count(DISTINCT OrderID)",
+      "qNumFormat": {
+        "qType": "F",
+        "qFmt": "#,##0"
+      }
+    },
+    "qMetaDef": {
+      "title": "Order Count"
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "mAOV",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Avg Order Value",
+      "qDef": "Sum(SalesAmount) / Count(DISTINCT OrderID)",
+      "qNumFormat": {
+        "qType": "F",
+        "qFmt": "#,##0.00"
+      }
+    },
+    "qMetaDef": {
+      "title": "Avg Order Value"
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "mCY",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Sales CY",
+      "qDef": "Sum({<OrderYear={$(vCurrentYear)}>} SalesAmount)"
+    },
+    "qMetaDef": {
+      "title": "Sales CY"
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "mMaxY",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Sales Latest Year",
+      "qDef": "Sum({<OrderYear={\"$(=Max(OrderYear))\"}>} SalesAmount)"
+    },
+    "qMetaDef": {
+      "title": "Sales Latest Year"
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "mAllReg",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Sales All Regions",
+      "qDef": "Sum({<Region=>} SalesAmount)"
+    },
+    "qMetaDef": {
+      "title": "Sales All Regions"
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "mIgnore",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Sales Ignoring Selections",
+      "qDef": "Sum({1} SalesAmount)"
+    },
+    "qMetaDef": {
+      "title": "Sales Ignoring Selections"
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "mEU",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Sales Europe",
+      "qDef": "Sum({<Region={'Europe'}>} SalesAmount)"
+    },
+    "qMetaDef": {
+      "title": "Sales Europe"
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "mBig",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Big Order Sales",
+      "qDef": "Sum({<Quantity={\">=10\"}>} SalesAmount)"
+    },
+    "qMetaDef": {
+      "title": "Big Order Sales"
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "mShare",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Share of Total",
+      "qDef": "Sum(SalesAmount) / Sum(TOTAL SalesAmount)",
+      "qNumFormat": {
+        "qType": "F",
+        "qFmt": "0.0%"
+      }
+    },
+    "qMetaDef": {
+      "title": "Share of Total"
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "mAvgCust",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Avg Sales per Customer",
+      "qDef": "Avg(Aggr(Sum(SalesAmount), CustomerName))"
+    },
+    "qMetaDef": {
+      "title": "Avg Sales per Customer"
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "mRun",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Running Sales",
+      "qDef": "RangeSum(Above(Sum(SalesAmount), 0, RowNo()))"
+    },
+    "qMetaDef": {
+      "title": "Running Sales"
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "mMargin",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Margin",
+      "qDef": "Sum(SalesAmount) - Sum(Quantity * UnitCost)"
+    },
+    "qMetaDef": {
+      "title": "Margin"
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "mBudget",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Budget",
+      "qDef": "Sum(BudgetAmount)"
+    },
+    "qMetaDef": {
+      "title": "Budget"
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "mVar",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Sales via Variable",
+      "qDef": "$(vSalesExpr) * (1 - $(vTargetMargin))"
+    },
+    "qMetaDef": {
+      "title": "Sales via Variable"
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "mDup",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Revenue",
+      "qDef": "Sum( SalesAmount )"
+    },
+    "qMetaDef": {
+      "title": "Revenue"
+    }
+  },
+  {
+    "qInfo": {
+      "qId": "mUnused",
+      "qType": "measure"
+    },
+    "qMeasure": {
+      "qLabel": "Legacy Discount",
+      "qDef": "Sum(TotalDiscount) / Sum(SalesAmount)"
+    },
+    "qMetaDef": {
+      "title": "Legacy Discount"
+    }
+  }
+]

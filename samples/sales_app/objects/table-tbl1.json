@@ -1,0 +1,47 @@
+{
+  "qInfo": {
+    "qId": "tbl1",
+    "qType": "table"
+  },
+  "visualization": "table",
+  "title": "Customers",
+  "qHyperCubeDef": {
+    "qDimensions": [
+      {
+        "qDef": {
+          "qFieldDefs": []
+        },
+        "qLibraryId": "dCust"
+      },
+      {
+        "qDef": {
+          "qFieldDefs": [
+            "Country"
+          ]
+        }
+      }
+    ],
+    "qMeasures": [
+      {
+        "qDef": {
+          "qDef": "",
+          "qLabel": ""
+        },
+        "qLibraryId": "mSales"
+      },
+      {
+        "qDef": {
+          "qDef": "",
+          "qLabel": ""
+        },
+        "qLibraryId": "mOrders"
+      },
+      {
+        "qDef": {
+          "qDef": "Sum(SalesAmount)/Count(DISTINCT OrderID)",
+          "qLabel": "AOV"
+        }
+      }
+    ]
+  }
+}

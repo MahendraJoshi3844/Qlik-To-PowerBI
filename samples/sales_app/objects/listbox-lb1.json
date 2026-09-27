@@ -1,0 +1,13 @@
+{
+  "qInfo": {
+    "qId": "lb1",
+    "qType": "listbox"
+  },
+  "qListObjectDef": {
+    "qDef": {
+      "qFieldDefs": [
+        "Region"
+      ]
+    }
+  }
+}

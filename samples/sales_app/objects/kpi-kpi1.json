@@ -1,0 +1,20 @@
+{
+  "qInfo": {
+    "qId": "kpi1",
+    "qType": "kpi"
+  },
+  "visualization": "kpi",
+  "title": "Sales",
+  "qHyperCubeDef": {
+    "qDimensions": [],
+    "qMeasures": [
+      {
+        "qDef": {
+          "qDef": "",
+          "qLabel": ""
+        },
+        "qLibraryId": "mSales"
+      }
+    ]
+  }
+}

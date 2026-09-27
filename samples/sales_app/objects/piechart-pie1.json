@@ -1,0 +1,30 @@
+{
+  "qInfo": {
+    "qId": "pie1",
+    "qType": "piechart"
+  },
+  "visualization": "piechart",
+  "title": "Sales by category",
+  "qHyperCubeDef": {
+    "qDimensions": [
+      {
+        "qDef": {
+          "qFieldDefs": [
+            "Category"
+          ]
+        }
+      }
+    ],
+    "qMeasures": [
+      {
+        "qDef": {
+          "qDef": "Sum(SalesAmount)",
+          "qLabel": "Sales"
+        }
+      }
+    ]
+  },
+  "donut": {
+    "showAsDonut": true
+  }
+}

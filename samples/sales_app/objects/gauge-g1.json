@@ -1,0 +1,20 @@
+{
+  "qInfo": {
+    "qId": "g1",
+    "qType": "gauge"
+  },
+  "visualization": "gauge",
+  "title": "Share",
+  "qHyperCubeDef": {
+    "qDimensions": [],
+    "qMeasures": [
+      {
+        "qDef": {
+          "qDef": "",
+          "qLabel": ""
+        },
+        "qLibraryId": "mShare"
+      }
+    ]
+  }
+}

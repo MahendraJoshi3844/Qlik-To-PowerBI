@@ -1,0 +1,11 @@
+[
+  {
+    "qName": "vSalesExpr",
+    "qDefinition": "Sum(SalesAmount)"
+  },
+  {
+    "qName": "vTargetMargin",
+    "qDefinition": "0.25",
+    "qComment": "Target margin"
+  }
+]

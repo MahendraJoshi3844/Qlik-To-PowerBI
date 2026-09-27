@@ -1,0 +1,29 @@
+{
+  "qInfo": {
+    "qId": "map1",
+    "qType": "map"
+  },
+  "visualization": "map",
+  "title": "Sales map",
+  "qHyperCubeDef": {
+    "qDimensions": [
+      {
+        "qDef": {
+          "qFieldDefs": [
+            "Country"
+          ]
+        }
+      }
+    ],
+    "qMeasures": [
+      {
+        "qDef": {
+          "qDef": "",
+          "qLabel": ""
+        },
+        "qLibraryId": "mSales"
+      }
+    ]
+  },
+  "qStateName": "StateA"
+}

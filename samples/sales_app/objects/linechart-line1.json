@@ -1,0 +1,35 @@
+{
+  "qInfo": {
+    "qId": "line1",
+    "qType": "linechart"
+  },
+  "visualization": "linechart",
+  "title": "Sales trend",
+  "qHyperCubeDef": {
+    "qDimensions": [
+      {
+        "qDef": {
+          "qFieldDefs": [
+            "OrderMonth"
+          ]
+        }
+      }
+    ],
+    "qMeasures": [
+      {
+        "qDef": {
+          "qDef": "",
+          "qLabel": ""
+        },
+        "qLibraryId": "mCY"
+      },
+      {
+        "qDef": {
+          "qDef": "",
+          "qLabel": ""
+        },
+        "qLibraryId": "mMaxY"
+      }
+    ]
+  }
+}

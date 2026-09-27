@@ -1,0 +1,35 @@
+{
+  "qInfo": {
+    "qId": "tree1",
+    "qType": "treemap"
+  },
+  "visualization": "treemap",
+  "title": "Product mix",
+  "qHyperCubeDef": {
+    "qDimensions": [
+      {
+        "qDef": {
+          "qFieldDefs": [
+            "Category"
+          ]
+        }
+      },
+      {
+        "qDef": {
+          "qFieldDefs": [
+            "ProductName"
+          ]
+        }
+      }
+    ],
+    "qMeasures": [
+      {
+        "qDef": {
+          "qDef": "",
+          "qLabel": ""
+        },
+        "qLibraryId": "mQty"
+      }
+    ]
+  }
+}
